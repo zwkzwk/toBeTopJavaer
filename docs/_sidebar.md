@@ -1,5 +1,4 @@
 
-
 * 基础篇
 
     * 面向对象
@@ -18,6 +17,8 @@
             * [方法重写与重载](/basics/object-oriented/overloading-vs-overriding.md)
             
             * [Java的继承与实现](/basics/object-oriented/extends-implement.md)
+            
+            * [Java为什么不支持多继承](/basics/object-oriented/multiple-inheritance.md)
         
             * [Java的继承与组合](/basics/object-oriented/inheritance-composition.md)
         
@@ -170,6 +171,8 @@
             * [枚举的序列化如何实现](/basics/java-basic/enum-serializable.md)
             
             * [枚举的线程安全性问题](/basics/java-basic/enum-thread-safe.md)
+            
+            * 为什么不建议在对外接口中使用枚举
             
         * IO
             
@@ -349,6 +352,8 @@
             
             * [yyyy和YYYY有什么区别？](/basics/java-basic/YYYY-vs-yyyy.md)
             
+            * 为什么日期格式化时必须有使用y表示年，而不能用Y？ 
+            
         * 编码方式
             
             * [什么是ASCII？](/basics/java-basic/ASCII.md)
@@ -386,6 +391,12 @@
             * java.lang.management.* 
             
             * javax.management.*
+            
+        * BigDecimal
+            
+            * 为什么0.1+0.2不等于0.3
+            
+            * 为什么不能使用BigDecimal的equals比较大小
             
         * Java 8
             
@@ -441,19 +452,19 @@
             
             * [线程调度](/basics/concurrent-coding/thread-scheduling.md)
             
-            * 多线程如何Debug
+            * [多线程如何Debug](/basics/concurrent-coding/debug-in-multithread.md)
             
             * [守护线程](/basics/concurrent-coding/deamon-thread.md)
             
         * 创建线程的多种方式
             
-            * 继承Thread类创建线程
+            * [继承Thread类创建线程](/basics/concurrent-coding/create-thread-with-extends.md)
             
-            * 实现Runnable接口创建线程
+            * [实现Runnable接口创建线程](/basics/concurrent-coding/create-thread-with-Implement.md)
             
-            * 通过Callable和FutureTask创建线程
+            * [通过Callable和FutureTask创建线程](/basics/concurrent-coding/create-thread-with-callback-future-task.md)
             
-            * 通过线程池创建线程
+            * [通过线程池创建线程](/basics/concurrent-coding/create-thread-with-thead-pool.md)
             
         * 线程池
             
@@ -603,7 +614,7 @@
             
             * 运行时数据区
             
-            * 运行时数据区哪些是线程独享
+            * [运行时数据区哪些是线程独享](/basement/jvm/exclusive-in-runtime-area.md)
             
             * 堆和栈区别
             
@@ -719,9 +730,27 @@
         
         * 类加载过程
         
-        * 双亲委派（破坏双亲委派）
+        * 如何判断JVM中类和其他类是不是同一个类
         
-        * 模块化（jboss modules、osgi、jigsaw）
+        * [双亲委派原则](/basement/jvm/parents-delegate.md)
+        
+        * [为什么需要双亲委派？](/basement/jvm/why-parents-delegate.md)
+        
+        * [“父子加载器”之间的关系是继承吗？](/basement/jvm/relation-with-parents-delegate.md)
+        
+        * [双亲委派是如何实现的？](/basement/jvm/implements-of-parents-delegate.md)
+        
+        * [如何打破双亲委派](/basement/jvm/ibreak-parants-delegate.md)
+        
+        * [如何自定义类加载器](/basement/jvm/define-class-loader.md)
+        
+        * [双亲委派被破坏的例子](/basement/jvm/sample-of-break-parents-delegate.md)
+        
+        * [为什么JNDI，JDBC等需要破坏双亲委派？](/basement/jvm/spi-parents-delegate.md)
+        
+        * [为什么Tomcat要破坏双亲委派](/basement/jvm/tomcat-parents-delegate.md)
+        
+        * [模块化（jboss modules、osgi、jigsaw）](/basement/jvm/moduler.md)
         
     * 打包工具
         
@@ -913,7 +942,11 @@
         
             * 用Java写一个简单的静态文件的HTTP服务器
             
-        * http/2
+        * HTTP/2
+            
+            * HTTP/2 存在哪些问题？
+            
+        * HTTP/3
         
         * Java RMI，Socket，HttpClient
                 
@@ -991,9 +1024,13 @@
             
             * AOP原理
             
+            * Spring AOP不支持方法自调用的问题
+            
             * 实现Spring的IOC
             
             * spring四种依赖注入方式
+            
+            * 为什么我不建议使用@Transactional声明事务 
             
         * Spring MVC
             
@@ -1252,6 +1289,9 @@
             
             * 为什么kill -9 不能随便执行
             
+            * rm一个被打开的文件会发生什么            
+            * rm一个被打开的文件会发生什么
+            
         * 进程间通信
         
         * 服务器性能指标
@@ -1377,6 +1417,10 @@
             * redis
             
             * memcached
+            
+        * Redis
+        
+            * Redis多线程 
             
         * 分别使用数据库锁、NoSql实现分布式锁
             
@@ -1720,6 +1764,12 @@
             * 主主复制
     
         * 异地多活
+        
+        * 预案
+        
+        * 预热
+        
+        * 限流
     
     * 高性能
     
@@ -1893,4 +1943,4 @@
         
         * Swift
         
-        * Rust       
+        * Rust
